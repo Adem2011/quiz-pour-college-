@@ -1,0 +1,307 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #4CAF50;
+    --secondary-color: #FFC107;
+    --third-color: #2196F3;
+    --accent-color: #f44336;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #333;
+}
+
+.logo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-account {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-account:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 100;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    z-index: 99;
+}
+
+.dropdown-menu.visible {
+    display: flex;
+}
+
+.dropdown-item {
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #333;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.categories-container, .quiz-container {
+    margin-top: 2rem;
+}
+
+.quiz-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.quiz-card {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+/* Couleurs des cartes par catégorie */
+.quiz-card.cp { border-left: 5px solid #ff5722; }
+.quiz-card.cm1 { border-left: 5px solid #4CAF50; }
+.quiz-card.cinquieme { border-left: 5px solid #2196F3; }
+.quiz-card.college { border-left: 5px solid #9c27b0; }
+.quiz-card.lycee { border-left: 5px solid #ffc107; }
+.quiz-card.general { border-left: 5px solid #cddc39; }
+
+.quiz-page {
+    text-align: left;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.quiz-progress-bar {
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-progress-bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.4s ease-in-out;
+}
+
+.question-card {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.option-button {
+    background-color: #333;
+    color: var(--text-color);
+    border: 1px solid #555;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.option-button:hover {
+    background-color: #444;
+}
+
+.option-button.selected {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.option-button.correct {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.option-button.incorrect {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #5cb85c;
+}
+
+.quiz-results {
+    margin-top: 1.5rem;
+}
+
+.result-item.correct {
+    color: var(--primary-color);
+}
+
+.result-item.incorrect {
+    color: var(--accent-color);
+}
+
+.btn-back {
+    margin-top: 1rem;
+    background-color: #333;
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .search-bar, .btn-account {
+        display: none;
+        width: 100%;
+        text-align: right;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-menu.active .dropdown-menu {
+        display: flex;
+        position: static;
+        width: auto;
+        margin-top: 1rem;
+    }
+    .nav-menu.active .search-bar, .nav-menu.active .btn-account {
+        display: block;
+    }
+    .dropdown-menu.visible {
+        display: flex;
+    }
+}
