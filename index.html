@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site de Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">Mon Site de Quiz</a>
+        
+        <nav class="nav-menu">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Rechercher un quiz...">
+            </div>
+            <a href="#" class="btn-account">Se connecter</a>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="dropdown-menu hidden">
+                <a href="#" class="dropdown-item" data-category="cp">CP</a>
+                <a href="#" class="dropdown-item" data-category="cm1">CM1</a>
+                <a href="#" class="dropdown-item" data-category="5e">5ème</a>
+                <a href="#" class="dropdown-item" data-category="college">Collège</a>
+                <a href="#" class="dropdown-item" data-category="lycee">Lycée</a>
+                <a href="#" class="dropdown-item" data-category="general">Général</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="container categories-container">
+            </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
